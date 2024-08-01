@@ -6,7 +6,7 @@ import banners from "../../data/adBanners.json";
 import { AdBanner } from "@/types";
 import Image from "next/image";
 
-export const Home: React.FC = () => {
+export default function Home() {
   const [adBanners, setAdBanners] = useState<AdBanner[]>(banners);
   const [editableBanner, setEditingBanner] = useState<AdBanner | null>(null);
 
@@ -26,7 +26,6 @@ export const Home: React.FC = () => {
   const handleClose = () => {
     setEditingBanner(null);
   };
-
   return (
     <div className="flex flex-wrap mx-72 my-4 items-center justify-center ">
       {adBanners.map((banner) => (
@@ -47,6 +46,4 @@ export const Home: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default Home;
+}
