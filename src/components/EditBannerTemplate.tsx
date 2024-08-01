@@ -3,6 +3,7 @@ import { AdBanner } from "@/types";
 import BannerImgComp from "./BannerImgComp";
 import { RxCross2 } from "react-icons/rx";
 import { FiUpload } from "react-icons/fi";
+import Image from "next/image";
 
 type EditBannerTemplateProps = {
   banner: AdBanner;
@@ -64,11 +65,10 @@ const EditBannerTemplate: React.FC<EditBannerTemplateProps> = ({
           <div className="images flex">
             {banners.map((bnr) => (
               <div className="image w-[110px] h-[110px]" key={bnr.id}>
-                <img
+                <Image
                   key={bnr.id}
                   className="w-[75px] h-[75px] rounded-full cursor-pointer mx-2"
                   src={`${bnr.image}`}
-                  width={"75px"}
                   alt=""
                   onClick={() => onImageClick(bnr.image)}
                 />
